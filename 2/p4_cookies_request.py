@@ -14,8 +14,8 @@ s = requests.Session()
 login_url = 'https://accounts.douban.com/j/mobile/login/basic'
 form_data = {
     'remeber' : 'true',
-    'name': '18864010963',
-    'password': 'Hb5m7PaUKGnns9w',
+    'name': '***',
+    'password': '***',
 }
 response = s.post(login_url, headers=headers, data=form_data)
 

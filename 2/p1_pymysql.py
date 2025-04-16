@@ -5,7 +5,7 @@ dbInfo = {
     'host' : 'localhost',
     'port' : 3306,
     'user' : 'root',
-    'password' : 'tc2a_FLW',
+    'password' : '****',
     'db' : 'db1',
     'charset' : 'utf8'    
 }
