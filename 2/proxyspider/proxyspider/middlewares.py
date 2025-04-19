@@ -106,7 +106,6 @@ class ProxyspiderDownloaderMiddleware:
     def spider_opened(self, spider):
         spider.logger.info("Spider opened: %s" % spider.name)
 
-# TODO: 随机代理地址无法使用，不清楚发送的request是http还是https 待验证，输出不了结果
 # 随机使用代理IP，继承HttpProxyMiddleware
 class RandomHttpProxyMiddleware(HttpProxyMiddleware):
 
@@ -135,15 +134,6 @@ class RandomHttpProxyMiddleware(HttpProxyMiddleware):
     def process_request(self, request, spider):
         # 为每个请求设置代理
         scheme = urlparse(request.url).scheme
-        self._set_proxy_and_creds(request, None, None, scheme)
-        return None
-
-    def _set_proxy_and_creds(
-        self,
-        request: Request,
-        proxy_url: Optional[str],
-        creds: Optional[bytes],
-        scheme: Optional[str],
-    ) -> None:
         proxy_url = random.choice(self.proxies[scheme])
-        request.meta["proxy"] = proxy_url
+        request.meta["proxy"] = scheme + '://' + proxy_url
+        return None
