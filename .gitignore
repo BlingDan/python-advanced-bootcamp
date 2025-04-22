@@ -19,6 +19,7 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+myproject_env/*
 
 # Virtual Environment
 venv/
@@ -66,4 +67,6 @@ sdist/
 var/
 *.egg-info/
 .installed.cfg
+
 *.egg 
+*.html

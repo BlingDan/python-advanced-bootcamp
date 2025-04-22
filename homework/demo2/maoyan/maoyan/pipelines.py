@@ -23,3 +23,4 @@ class MaoyanCsvPipeline:
 
     def close_spider(self, spider):
         self.file.close()
+    
